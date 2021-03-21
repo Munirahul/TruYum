@@ -35,13 +35,13 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao{
             Date currentDate = new Date();
             boolean flag1;
             boolean flag2;
-            boolean flag3;
+            
            for (int i = 0; i < menuItemList.size(); i++){
                 MenuItem item = menuItemList.get(i);
                 flag1 = item.isActive();
                 flag2 = item.getDateOfLaunch().before(currentDate);
-                flag3 = item.getDateOfLaunch().equals(currentDate);
-                if (flag1 && (flag2 || flag3))
+                
+                if (flag1 && flag2)
                 {
                     displayMenuItem.add(item);
                 }
